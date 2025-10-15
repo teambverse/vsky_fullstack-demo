@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Loading State */
+.loading-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fff7ed, #fee2e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.spinner {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(234, 88, 12, 0.1);
+    border-bottom-color: #ea580c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-content p {
+    color: #4b5563;
+    font-size: 1.125rem;
+}
+
+/* Error State */
+.error-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fff7ed, #fee2e2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.error-content {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 28rem;
+    text-align: center;
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.error-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.error-content p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.error-content button {
+    background-color: #ea580c;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.error-content button:hover {
+    background-color: #c2410c;
+}
+
+/* Main App */
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #fff7ed, #fee2e2);
+    padding: 2rem;
+}
+
+.content-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.app-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Restaurant Card */
+.restaurant-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.restaurant-list {
+    list-style: none;
+}
+
+.restaurant-item {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s;
+}
+
+.restaurant-item:last-child {
+    border-bottom: none;
+}
+
+.restaurant-item:hover {
+    background-color: #fff7ed;
+}
+
+.restaurant-name h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.restaurant-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.star-icon {
+    font-size: 1.5rem;
+}
+
+.rating-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ea580c;
+}
+
+.restaurant-count {
+    text-align: center;
+    color: #4b5563;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .app-title {
+        font-size: 1.875rem;
+    }
+
+    .restaurant-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .restaurant-rating {
+        align-self: flex-end;
+    }
+}
+
+
+/* --- Form styles --- */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.form-row input {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+
+/* Phone input field focus */
+.react-tel-input .form-control:focus {
+  outline: none;
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15) !important;
+  transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+
+/* Country code button focus or open */
+/* .react-tel-input .flag-dropdown.open,
+.react-tel-input .flag-dropdown:focus,
+.react-tel-input .flag-dropdown:focus-within {
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15) !important;
+  transition: border-color 0.15s, box-shadow 0.15s !important;
+} */
+
+/* Remove box-shadow from the country code button on focus */
+.react-tel-input .flag-dropdown:focus,
+.react-tel-input .flag-dropdown.open,
+.react-tel-input .flag-dropdown:focus-within {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+.error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.success-banner {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+/* Submit button aligned to theme */
+button[type="submit"] {
+  background-color: #ea580c;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #c2410c;
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Keep list card look consistent with the form card */
+.restaurant-card form {
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.restaurant-card > h2 {
+  padding: 1rem 1.25rem 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .form-row {
+    margin-bottom: 0.875rem;
+  }
+}
+
+/* Header row with top-right action */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 56rem;
+  margin: 0 auto 1rem;
+}
+.add-btn {
+  background-color: #ea580c;
+  color: #fff;
+  padding: 1rem 0.9rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+.add-btn:hover { background-color: #c2410c; }
+
+/* Modal overlay and content */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 45px -10px rgba(0,0,0,0.35);
+  padding: 1rem 1rem 1.25rem;
+  animation: modalIn 140ms ease-out;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.25rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+.modal-header h3 {
+  font-size: 1.125rem;
+  color: #1f2937;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+.icon-btn:hover { color: #111827; }
+
+/* Modal form body */
+.modal-content form {
+  padding-top: 0.75rem;
+}
+
+/* Footer actions */
+.modal-footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.secondary-btn {
+  background: #f3f4f6;
+  color: #111827;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+.secondary-btn:hover { background: #e5e7eb; }
+
+/* Toast success */
+.toast-success {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  z-index: 60;
+}
+
+/* Reuse existing button style for primary submit inside modal */
+.modal-footer button[type="submit"] {
+  background-color: #ea580c;
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+.modal-footer button[type="submit"]:hover { background-color: #c2410c; }
+
+@media (max-width: 640px) {
+  .header-row { margin-bottom: 0.5rem; }
+  .modal-content { padding: 0.75rem; }
+}

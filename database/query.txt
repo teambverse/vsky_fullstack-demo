@@ -1,0 +1,12 @@
+#Here is the query to retrieve the data from the data:
+
+SELECT
+    id,
+    name,
+    rating,
+    address,
+    phone_number
+FROM restaurants
+WHERE rating IS NOT NULL
+ORDER BY rating DESC, name ASC
+LIMIT 5;

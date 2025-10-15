@@ -1,0 +1,13 @@
+syntax = "proto3";
+package restaurant;
+message RestaurantID { string id = 1; }
+message RestaurantDetails {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  string phone_number = 4;
+  double rating = 5;
+}
+service RestaurantService {
+  rpc GetRestaurant (RestaurantID) returns (RestaurantDetails);
+}

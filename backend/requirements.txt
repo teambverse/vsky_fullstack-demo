@@ -1,0 +1,14 @@
+Django==5.2.7
+djangorestframework==3.16.1
+django-cors-headers==4.9.0
+grpcio==1.75.1
+grpcio-tools==1.75.1
+psycopg2-binary==2.9.9
+django-redis==5.4.0
+redis==6.4.0
+paho-mqtt==1.6.1
+numpy==1.26.4
+pandas==2.2.2
+openpyxl==3.1.2
+chardet==5.2.0
+gunicorn==21.2.0

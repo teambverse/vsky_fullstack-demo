@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package restaurant;
+
+// Restaurant message definition
+message Restaurant {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  string phone_number = 4;
+  double rating = 5;
+  string created_at = 6;
+  string updated_at = 7;
+  bool is_active = 8;
+}
+
+// Request message for GetRestaurant
+message GetRestaurantRequest {
+  string restaurant_id = 1;
+}
+
+// Response message for GetRestaurant
+message GetRestaurantResponse {
+  Restaurant restaurant = 1;
+}
+
+// Restaurant service definition
+service RestaurantService {
+  // Get restaurant details by ID
+  rpc GetRestaurant(GetRestaurantRequest) returns (GetRestaurantResponse);
+}
